@@ -22,6 +22,7 @@
 * admin section has features to add a news article and add/remove items from the shop and view order items very easily
 * admin sections allows to upload multiple images and then puts them in a gallery easily
 * ability to send messages to people in duffa and receive them which is useful if the person doesn't use facebook.
+* ability to send messages/notifications through comments by mentioning @username
 
 ** this is in no way a replacement for facebook, just an alternative for people who don't use it/frequently miss messages made on facebook due to them getting lost in a sea of messages. 
 ** Ideally, with an access token for the facebook group, we could have people use facebook as normal but also allow people who don't use facebook the ability to see what is going on
@@ -55,16 +56,17 @@
  
 # #########################################
 * emailing in its current form isn't the best, particularly as the host for omar.earth seems to have disabled php's mail(). 
-PEAR mail would be a better solution
-* haven't yet added a feature to show that items from the shop have been posted (as not sure yet if the feature is wanted)
-* an order from the shop can be made but it doesn't yet alert anyone as of yet 
+PEAR mail would be a better solution but the current back end solution on the main website works so I'd stick with that
+* haven't yet added a feature to show that items from the shop have been posted (as not sure yet if the shop feature is wanted)
+* an order from the shop can be made but it doesn't yet alert anyone as of yet (reasons as above)
 * no post limit on making comments/registration as of yet (mainly due to testing; a post limit would be annoying)
 * honeypot method or captcha has not yet been implemented for things like anonymous posts or registrations. This isn't really needed either unless bots/spam become an issue
-* images used aren't the best as I don't have access to the duffa gallery
+* images used aren't the best as I don't have access to the duffa gallery/haven't found a good gallery/gallery may be on facebook which I don't use
 * news section only displays the last three articles. I could easily change this so that you can keep swiping through older articles or put an archive in
 * add a cover image option for user profiles
 * ability to change your username
 * about section is incomplete (but trivial)
+* commenting @username currently leads to a blank user page. Either I should change the blank user page to read 'no such user' or not include a hyperlink to @non_existent_username
  
 
 # ##############################

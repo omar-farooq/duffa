@@ -1,0 +1,265 @@
+/*************************************************************
+* because of how comprehensive the review page is, i thought *
+* that it deserved its own css page			     *
+*************************************************************/
+
+ul {
+	list-style-type: none;
+}
+
+textarea {
+	width: 240px;
+	height: 120px;
+}
+
+@media (min-width:1001px) {
+	#content {
+		width: 45%;
+		margin-left: 15%;
+	}
+
+	#related {
+		width:25%; 
+		left:5%; 
+		top:60px; 
+		margin-bottom:120px;
+	}
+}
+
+#related:after {
+	box-shadow: 0px 0px 0px 0px;
+}
+
+#review-btn {
+	cursor: pointer;
+	width: 150px;
+	margin: 0 auto;
+}
+
+.delete-btn, .edit-btn, .reply-btn, .makereply, .cancelreply, .makeedit, .canceledit, .make-edit-com, .cancel-edit-com, .makereply2, .cancelreply2 {
+
+	cursor: pointer;
+
+}
+
+.comment-delete-btn, .comment-edit-btn, .comment-reply-btn {
+
+	cursor: pointer;
+	display: inline-block;
+
+}
+
+.comment-body {
+	width: 400px;
+}
+
+.comment-buttons-holder {
+	visibility: hidden;
+	clear: both;
+	float: left;
+	display: inline-block;
+}
+
+.comment-buttons-holder li {
+	margin-left: 5px;
+}
+
+.comment-buttons-holder > ul {
+	display: flex;
+	margin-left: 25px;
+}
+
+.comment-holder {
+	text-align: left;
+	font-size: 14px;
+	margin-left: 10%;
+	clear: left;
+	padding-bottom: 20px;
+}
+
+.comment-holder:hover .comment-buttons-holder {
+	visibility: visible;
+}
+
+.comment-holder:active .comment-buttons-holder {
+	visibility: visible;
+}
+
+.comment-holder .comment-text {
+	word-wrap: break-word;
+}
+
+.comment-holder .user-image > img {
+	height: 100%; 
+	width: 60px;
+	margin-top: 5px;
+}
+
+.comment-holder > .comment-body > h3 {
+	clear: left;
+}
+
+.comment-holder .username-field {
+	text-align: left;
+	margin-top: 0px;
+	margin-left: 10px;
+	margin-bottom: 0px;
+}
+
+.comment-holder .user-image {
+	float: left;
+	height: 60px; width: 60px;
+}
+
+.comment-text {
+	text-align: left;
+	margin-left: 10px;
+}
+
+.comment-text img {
+	max-width: 100%
+}
+
+.comment-top-wrapper {
+	display:flex;
+}
+
+.in-reply-to {
+	margin-top: -10px; margin-bottom: -5px; margin-left: 15px;
+}
+
+.review-body {
+	margin-top: -30px;
+}
+
+.review-buttons-holder {
+	visibility: hidden;
+	margin-top: 10px;
+	margin-left: -30px;
+	display: inline-block;
+}
+.review-holder:hover .review-buttons-holder {
+	visibility: visible;
+}
+
+.review-holder:active .review-buttons-holder {
+	visibility: visible;
+}
+
+.review-holder > .user-image > img {
+	height: 150px;
+	width: 225px;
+}
+
+.review-holder > .user-image-nologin > img {
+	height: 100px;
+	width: 150px;
+}
+
+.review-holder > .review-body > h3 {
+	font-size: 28px;
+	margin-bottom: 0;
+}
+
+.review-holder {
+	margin-bottom: 20px;
+	border-top: solid;
+	border-width: 1px;
+	clear: left;
+}
+
+.review-holder > .user-image {
+	margin-top: 20px;
+	margin-left: 50px;
+	display: inline-block;
+}
+
+.review-holder > .user-image-nologin {
+	margin-top: 20px;
+	margin-left: 0px;
+	display: inline-block;
+}
+
+.review-holder img {
+	max-width: 500px;
+}
+
+.reviews-holder-ul {
+	margin-left: -40px;
+}
+
+.reply-btn-img {
+	height: 30px;
+	width: 30px;
+}
+
+.comment-spacer {
+	height: 10px;
+}
+
+#review-text {
+	width: 400px;
+	height: 250px;
+	margin: 0 auto;
+	text-align: left;
+	border: 2px solid black;
+	word-wrap: break-word;
+	overflow-y: auto;
+}
+
+#review-text img {
+	width: 300px;
+	max-height: 250px;
+}
+
+#submitImage {
+	opacity: 0;
+}
+
+#user-image {
+	margin: 0;
+}
+
+#insert-image-icon, #insert-video-icon {
+	position: relative;
+	height: 44px;
+	width: 44px;
+	top: 8px;
+}
+
+.review-text, .comment-text {
+	font-size: 20px;
+}
+
+.username-field {
+	font-size: 24px;
+}
+
+@media (max-width:1001px) {
+	.modaltext > div {
+		margin-top: 15px;
+
+	}
+
+	#image-upload-preview {
+		height: 250px;
+	}
+}
+
+@media (max-width:501px) {
+	.review-holder img {
+		max-width: 300px;
+	}
+
+	.modaltext > div {
+		width: 300px;
+	}
+	#review-text {
+		width:300px;
+	}
+
+	#image-upload-preview {
+		width: 250px !important;
+		height: 150px;
+	}
+}

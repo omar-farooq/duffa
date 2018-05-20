@@ -1,0 +1,110 @@
+#comment-text {
+	height: auto;
+	width: 250px;
+}
+
+#content-wrapper {
+	z-index: 2;
+}
+
+#banner {
+	background-image: "";
+	display: none !important;
+}
+
+#expand-send-message-form {
+	cursor: pointer;
+}
+
+/* this is for a white footer which could be useful 
+for when an overwhelming banner is used
+#footertop {
+	background-color: #fff !important;
+	color: black;
+}*/
+
+#profile-photo {
+	height: 170px;
+	width: 180px;
+	position: absolute;
+	left: 5%;
+	top: -100px;
+	border: 3px solid;
+	padding: 3px;
+}
+
+#related {
+	width:20%; 
+	left:2.5%; 
+	top:60px; 
+	margin-bottom:120px;
+}
+
+#related:after {
+	box-shadow: 0px 0px 0px 0px;
+}
+
+#slideshow-container::before {
+
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	display: block;
+	background-image: url(../layout/banner_images/duffa-birthday-10.jpeg) !important;
+	background-size: cover;
+	z-index: -1;
+	background: 50% 50% / cover;
+}
+
+#slideshow-container {
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	background-image: url(../layout/banner_images/duffa-birthday-10.jpeg) !important;
+	background-size: cover;
+	background: 50% 50% / cover;
+	box-sizing: border-box;
+	transform-style: inherit;
+}
+
+#send-message {
+	display: none;
+}
+
+#user-profile {
+	margin-top: 30px;
+}
+
+.red-button {
+	background: #f44336;
+	color: #ffffff;
+	border: #b71c1c solid 1px;
+	border-radius:3px;
+	font-size:17px;
+	padding: 2px 2px;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+}
+
+.red-button:hover {
+	background: #d32f2f;
+}
+
+.usericon-desktop {
+	display: none;
+}
+
+@media (max-width: 1001px) {
+
+	#related {
+		display: block;
+		width: 100%;
+		margin-bottom: 0px;
+	}
+
+	#related p {
+		margin: 0;
+	}
+}

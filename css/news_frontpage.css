@@ -1,0 +1,153 @@
+#slideshow {
+	margin-left: 5%;
+	width: 90%;
+	height: 80%;
+	position: relative;
+}
+
+.image1, .image2, .image3 {
+
+	display: none;
+	width: 100%;
+}
+
+.news-text {
+	position: relative;
+	margin: 0 auto;
+	bottom: 60px;
+	background: linear-gradient(
+    			rgba(0, 0, 0, 0.12),
+     			rgba(0, 0, 0, 0.30)
+			);
+	color: white;
+	font-size: 40px;
+}
+
+.news-text a {
+	color: white;
+}
+
+.news-title1, .news-title2, .news-title3 {
+	cursor: pointer;
+}
+
+.news-title2, .news-title3 {
+	margin-left: 3px;
+}
+
+#slideshow > div > img {
+	width: 100%; height: 100%;
+}
+
+.active {
+	display: block;
+	z-index:99;
+
+}
+
+#recent-news-titles {
+	margin-left: 3%;
+	float: left;
+	/*alternate colour
+	background-color: #cc6699;
+	color: white;*/
+	background-color: #ff9933;
+	color: black;
+	font-size: 24px;
+}
+
+#slideshow {
+	clear: both;
+}
+#content { 
+	padding-top: 40px;
+	display: inline-block;
+	height: 100%;
+}
+
+#related {
+	padding-top: 40px;
+}
+
+.fb-page, 
+.fb-page span, 
+.fb-page span iframe[style],
+.fb-page * { 
+    width: 100% !important; 
+}
+
+
+
+@keyframes fadeInLeft {
+	from {
+	opacity: 0;
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+	}
+
+	to {
+	opacity: 1;
+	-webkit-transform: none;
+	transform: none;
+	}
+}
+
+.fadeInLeft {
+	-webkit-animation-name: fadeInLeft;
+	animation-name: fadeInLeft;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	animation-fill-mode:forwards;
+	-webkit-animation-fill-mode:forwards;
+}
+
+@keyframes fadeInLeft {
+	from {
+	opacity: 0;
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+	}
+
+	to {
+	opacity: 1;
+	-webkit-transform: none;
+	transform: none;
+	}
+}
+
+.fadeInLeft {
+	-webkit-animation-name: fadeInLeft;
+	animation-name: fadeInLeft;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	animation-fill-mode:forwards;
+	-webkit-animation-fill-mode:forwards;
+}
+
+@media only screen and (max-width: 500px) {
+	#recent-news-titles {
+		font-size: 18px;
+	}
+
+	.news-text {
+		bottom: 40px;
+		font-size: 26px;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.active {
+		padding-bottom: 40px;
+	}
+}
+
+@media only screen and (min-width: 1001px) {
+	#content-wrapper {
+		display: flex !important;
+		margin-bottom: 0px !important;
+	}
+
+	#footer {
+		position: relative !important;
+	}
+}

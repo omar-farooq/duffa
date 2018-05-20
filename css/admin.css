@@ -1,0 +1,82 @@
+.update-quantity {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+	margin: 0
+}
+
+#additional-quantity, #remove-quantity-amount {
+	width: 60px;
+}
+
+#email-message {
+	width:300px;
+	height: 400px;
+}
+
+#preview-article-description {
+	position: relative; margin: 0 auto; bottom: 30px; background: linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)); color: white; font-size: 20px; width: 350px;
+}
+
+
+/* for the drag and drop image upload */
+
+.additions-text {
+	left: 10px;
+	position: absolute;
+	font-size: 20px;
+}
+
+.image-upload-container {
+	margin: 0 auto;
+}
+.file_drag_area
+{
+	max-width: 600px;
+	min-width: 250px;
+	height: 400px;
+	border: 2px dashed #ccc;
+	line-height: 40px;
+	text-align: center;
+	font-size: 24px;
+}
+
+.file_drag_over {
+	color: #000;
+	border-color: #000;
+}
+
+#file, #upload-errors, .additions-text {
+    display:none;
+}
+
+#uploaded_file img {
+	width: 300px;
+	height: 200px;
+}
+
+#uploaded_file {
+	display: inline-flex;
+	position: relative;
+	left: 0px;
+	flex-wrap: wrap;
+	margin-top: 40px;
+	width: 100%;
+}
+
+
+
+/* for screen sizes */
+@media (max-height:1001px) {
+	#related {
+		display: block;
+	}
+}

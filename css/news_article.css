@@ -1,0 +1,96 @@
+img {
+	max-width: 100%;
+}
+
+#comment-text {
+	width: 70%;
+	height: 150px;
+	margin: auto;
+	margin-top: 5px;
+	border: 2px solid black;
+	text-align: left;
+	word-wrap: break-word;
+}
+
+#commentor-name {
+	margin-right: 50px;
+}
+
+#related {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.cancel-edit-com, .make-edit-com {
+	cursor: pointer;
+}
+
+.comment-holder {
+	clear: left;
+}
+
+.comment-body {
+	width: 200px;
+}
+
+.comment-buttons-holder {
+	clear: both;
+	float: left;
+	display: inline-block;
+}
+.comment-buttons-holder li {
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+.comment-buttons-holder ul{
+	display: flex;
+	margin-left: 25px;
+}
+
+.comment-text {
+	word-wrap: break-word;
+}
+
+.comment-top-wrapper {
+	display:flex;
+}
+
+.comment-text {
+	text-align: left;
+	margin-left: 10px;
+}
+
+.news-headers {
+	font-family: 'Catamaran', sans-serif;
+	margin: 0px;
+}
+
+.username-field {
+	text-align: left;
+	margin-top: 0px;
+	margin-left: 10px;
+	margin-bottom: 0px;
+}
+
+.user-image {
+	height: 60px; width: 60px;
+	float: left;
+}
+
+.user-image-pic {
+	height: 100%; 
+	width: 60px;
+	margin-top: 5px;
+}
+
+
+@media (max-height:1001px) {
+	#related {
+		display: block;
+	}
+}

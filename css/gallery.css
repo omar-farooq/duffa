@@ -1,0 +1,452 @@
+body {
+	background-color: #fff;
+}
+
+#banner {
+	opacity: 0.9;
+	background-position: 50% 37%;
+}
+
+#banner_text {
+	top: 0px !important;
+	position: relative;
+	float: right;
+	margin-right: 100px;
+}
+
+#content:before {
+	box-shadow: initial;
+}
+
+#content {
+	background-color: #fff9 !important;
+	text-align: initial;
+}
+
+#content-wrapper {
+	margin-top: 0px;
+}
+
+#event-duffa {
+	background-color: #71ceda;
+	color: #ff00bd;
+	font-size: 20px;
+	display: block;
+	width: 250px;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+
+#event-gallery-container {
+	display: inline-flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+#footertop {
+	background-color: #ffffff;
+	color: #0e040ab3;
+}
+
+#header, .menu {
+	background-color: #535353 !important;
+}
+
+#title, #desktop-nav a, .hamburger, .menu li {
+	color: #fff !important;
+}
+
+.banner-slides {
+	color: #FFF;
+	font-size: 42px;
+}
+
+.click-for-larger, .sample {
+	transition: 0.3s;
+}
+
+.click-for-larger:hover {
+	opacity: 0.7;
+}
+
+.click-for-more-duffa {
+	background-color: #00aedd;
+	font-size: 35px;
+}
+
+.click-for-more-user {
+	background-color: #e93100cc;
+	font-size: 35px;
+}
+
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 80px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;-
+}
+
+.duffa-gallery-summary {
+	font-size: 50px;
+	margin-left: 50px;
+	width: 45%;
+	text-align: center;
+}
+
+.event-header {
+	background-color: #eaeaea;
+	color: #2d222a;
+	font-size: 30px;
+	display: block;
+	width: 300px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	left: 5%;
+	position: relative;
+}
+
+.galleryImage {
+	width: 33.3%;
+	height: 225px;
+}
+
+.sample-gallery-container {
+	display: inline-block;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.sample-image-container {
+	width: 55%; 
+	position: relative	
+}
+
+.sample-image-text-container {
+	display: inline-flex; 
+	justify-content: center; 
+	align-items: center; 
+	width: 90%;
+	margin-left: 5%;
+	margin-bottom: 50px;
+}
+
+.sample {
+	opacity: 0.8;
+	color: #fff9;
+	width: 100%; 
+	position: absolute
+}
+
+.sample a:visited, a {
+	color: #fffc !important;
+}
+
+.sample:hover {
+	opacity: 1;
+}
+
+.user-gallery-summary {
+	font-size: 50px;
+	order: -1;
+	width: 45%;
+	margin-right: 50px;
+	text-align: center;
+	position: relative;
+	top: -30px;
+}
+
+.usericon-desktop {
+	display: none;
+}
+
+
+
+
+/* Make the display cover the whole page; No related */
+#content {
+	width: 90%;
+}
+
+/* Modal for the image */
+.modal{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	margin-bottom: 50px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+	width: 80%;
+	max-width: 900px;
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 0.6s;
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+
+#modal-content-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 100px;
+}
+
+@-webkit-keyframes zoom{
+	from {-webkit-transform: scale(0)}
+	to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+	from {transform:scale(0)}
+	to {transform:scale(1)}
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+	cursor: pointer;
+	position: relative;
+	padding: 16px;
+	color: white;
+	height: 30px;
+	font-weight: bold;
+	font-size: 20px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+	-webkit-user-select: none;
+	z-index: 2;
+	-webkit-animation-name: zoom;
+	-webkit-animation-duration: 1.0s;
+	animation-name: zoom;
+	animation-duration: 1.0s;
+}
+
+.prev {
+	left: 49px;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 49px;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* responsive gallery for all devices */
+
+@media only screen and (max-width: 1201px) {
+	.duffa-gallery-summary, .user-gallery-summary {
+		font-size: 30px;
+	}
+
+	.galleryImage {
+		width: 33.3%;
+		height: 192px;
+	}
+}
+
+@media only screen and (max-width: 1001px) {
+	 #content {
+		width: 100% !important;
+		left: 0px;
+	}
+
+	#banner {
+		height: 130px;
+	}
+
+	#banner_text {
+		top: -20px !important;
+	}
+
+	#desktop-features {
+		margin-bottom: -36px;
+	}
+
+	#footertop {
+		height: 149px;
+	}
+
+	.galleryImage {
+		width: 33.3%;
+		height: 195px;
+	}
+
+	#imageModal {
+		padding-top: 0px;
+		margin-bottom: 0px;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+	}
+
+	.close {
+		top: -10px;
+		right: 35px;
+	}
+
+	#modal-content-wrapper {
+		display: initial;
+	}
+
+	.prev {
+		top: 40%;
+		left: 0px;
+		position: absolute;
+	}
+
+	.modal-content {
+		max-width: initial;
+		width: 100%;
+		height: 100%;
+	}
+
+	.next {
+		top: 40%;
+		right: 0px;
+		position: absolute;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.modal-content {
+		width: 100%;
+	}
+
+}
+
+@media only screen and (max-width: 800px) {
+
+	.galleryImage {
+		width: 33.3%;
+		height: 156px;
+	}
+
+	.sample-gallery-container {
+		width: 100% !important;
+		min-width: 300px !important;
+	}
+
+	.sample-image-text-container {
+		flex-direction: column;
+		
+	}
+
+	.sample-image-container {
+		width: 100%;
+	}
+
+	.duffa-gallery-summary {
+		width: 100%;
+		margin-left: 0px;
+	}
+
+	.user-gallery-summary {
+		width: 100%;
+		order: initial;
+		margin-right: 0px;
+		top: 0px;
+	}
+
+	
+
+}
+
+@media only screen and (max-width: 900px) {
+
+	.click-for-larger {
+
+	}
+
+}
+
+@media only screen and (max-width: 600px) {
+
+	.click-for-larger {
+		width:100%;
+		margin-top: 0px !important;
+		margin-left: 0px !important;
+	}
+
+	.galleryImage {
+		width: 100%;
+		height: 360px;
+	}
+
+	#banner {
+		height: 70px !important;
+	}
+
+	#banner_text {
+		color: #FFF9;
+		font-size: 50px;
+		margin: 0 auto;
+		display: block;
+		position: relative;
+		text-align: center;
+		left: 0px;
+		top: 0px;
+	}
+
+	#desktop-features {
+		margin-bottom: -30px;
+	}
+
+
+}
+
+@media only screen and (max-width: 500px) {
+
+	.galleryImage {
+		width: 100%;
+		height: 300px;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+
+	.galleryImage {
+		width: 100%;
+		height: 240px;
+	}
+}
+
+@media only screen and (max-width: 300px) {
+
+	.galleryImage {
+		width: 100%;
+		height: 180px;
+	}
+}
+
+@media only screen and (min-width: 1002px) {
+	#duffa-sample-container {
+		background-color: #fce9e94d;
+	}
+}

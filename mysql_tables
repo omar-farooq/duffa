@@ -1,0 +1,224 @@
+--USER TABLE--
+CREATE TABLE users (
+UserID INT(25) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+FacebookID INT(25) ,
+Username VARCHAR(65) NOT NULL ,
+FirstName VARCHAR(65) NOT NULL ,
+LastName VARCHAR(65) ,
+Password VARCHAR(255) ,
+EmailAddress VARCHAR(255) ,
+PhoneNumber VARCHAR(32) ,
+Profile_Pic VARCHAR(9999) DEFAULT '/user/profile_pics/default.jpg' ,
+DateRegistered TIMESTAMP ,
+user_level INT UNSIGNED ,
+email_list TINYINT(1) UNSIGNED DEFAULT 0 ,
+sms_list TINYINT(1) UNSIGNED DEFAULT 0 ,
+about TEXT ,
+verified BOOLEAN NOT NULL DEFAULT 0
+);
+
+ALTER TABLE users MODIFY DateRegistered TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+---------------------------------------------------------
+
+--VERIFICATION TOKENS--
+CREATE TABLE email_verification (
+VerificationID INT(25) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+token CHAR(64) ,
+UserID INT(25) NOT NULL ,
+EmailAddress VARCHAR(255) NOT NULL ,
+expires DATETIME
+);
+
+
+---------------------------------------------------------
+
+//This is for sunday/thursday "session" events and not for the user session on the site
+
+--SESSION TABLE--
+CREATE TABLE session (
+SessionID INT(25) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+SessionDate TIMESTAMP,
+Cancelled TINYINT(1) DEFAULT 0 ,
+Info VARCHAR(255)
+);
+
+--(test) schedule event for table--
+CREATE EVENT test_event ON SCHEDULE EVERY 1 HOUR STARTS '2018-04-27 17:02:00'
+DO
+INSERT INTO session(SessionDate) VALUES (NOW());
+
+--(actual) schedule event for table--
+CREATE EVENT duffa_session_sunday ON SCHEDULE EVERY 1 WEEK STARTS '2018-04-22 17:00:00'
+DO
+INSERT INTO session(SessionDate) VALUES (NOW() + INTERVAL 2 WEEK);
+
+--Thursday event
+CREATE EVENT duffa_session_thursday ON SCHEDULE EVERY 1 WEEK STARTS '2018-04-26 18:00:00'
+DO
+INSERT INTO session(SessionDate) VALUES (NOW() + INTERVAL 2 WEEK);
+
+
+ALTER TABLE session MODIFY SessionDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+
+------------------------------------------------------------------
+
+
+
+
+
+--REVIEWS TABLE--
+CREATE TABLE reviews (
+ReviewID INT(25) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+SessionID INT(25) NOT NULL ,
+UserID INT(25) ,
+Review TEXT ,
+ReviewTime TIMESTAMP
+);
+
+ALTER TABLE reviews MODIFY ReviewTime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+
+----------------------------------------------------------------------
+
+
+
+
+--COMMENTS TABLE--
+CREATE TABLE comments (
+CommentID INT(25) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+UserID INT(25) ,
+ReviewID INT(25) ,
+ArticleID INT(25) ,
+ParentID INT(25) ,
+Comment TEXT ,
+CommentTime TIMESTAMP
+);
+
+ALTER TABLE comments MODIFY CommentTime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------
+
+
+---PMS TABLE ---
+CREATE TABLE pms (
+pmID INT(25) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+sender VARCHAR(65) NOT NULL ,
+senderID INT(25) ,
+recipient VARCHAR(65) NOT NULL ,
+recipientID INT(25) ,
+message TEXT ,
+seen TINYINT(1) DEFAULT 0 ,
+pmtime TIMESTAMP
+);
+
+ALTER TABLE pms MODIFY pmtime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+
+------------------------------------------------------------------------------------------
+
+---AUTH TOKENS TABLE ---
+CREATE TABLE auth_tokens (
+authID INT(25) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+token CHAR(64) ,
+UserID INT(25) NOT NULL ,
+expires DATETIME
+);
+
+--------------------------------------------------------------------------------------------
+
+--SHOP ITEMS TABLE ---
+CREATE TABLE shop (
+ProdID INT(25) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+name CHAR(64) ,
+price DECIMAL(6,2) ,
+postage DECIMAL (3,2) ,
+submitterID INT(25) ,
+ownerID INT(25) ,
+quantity TINYINT(3) ,
+image VARCHAR(9999) ,
+description TEXT
+deleted BOOLEAN DEFAULT 0
+);
+
+----------------------------------------------------------------------------------------------
+
+--ORDERS TABLE --
+CREATE TABLE orders (
+OrderNumber INT(25) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+OrderTime TIMESTAMP ,
+UserID INT(25) NOT NULL ,
+name VARCHAR(255) ,
+email VARCHAR(255) ,
+phone VARCHAR(20) ,
+address1 VARCHAR(255) ,
+address2 VARCHAR(255) ,
+town VARCHAR (64) ,
+city VARCHAR (64) ,
+postcode VARCHAR (64) ,
+collect BOOLEAN ,
+postage DECIMAL(4,2) ,
+paid BOOLEAN ,
+cancelled BOOLEAN
+);
+
+ALTER TABLE orders MODIFY OrderTime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+------------------------------------------------------------------------------------------
+
+--ORDER ITEMS TABLE--
+CREATE TABLE order_items (
+ItemNumber INT(25) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+OrderNumber INT(25) NOT NULL ,
+ProdID INT(25) NOT NULL ,
+quantity TINYINT(3) ,
+posted BOOLEAN ,
+ref VARCHAR(255)
+);
+
+
+
+------------------------------------------------------------------------------------------
+
+--Payments TABLE--
+CREATE TABLE payments (
+OrderNumber INT(25) NOT NULL ,
+paymentId VARCHAR(255) ,
+PayerID VARCHAR(255) ,
+PaymentTime TIMESTAMP 
+);
+
+ALTER TABLE payments MODIFY PaymentTime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+
+------------------------------------------------------------------------------------------
+
+--IMAGE GALLERY TABLE--
+CREATE TABLE gallery (
+ImageID INT(25) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+SubmitterID INT(25) ,
+event CHAR(64) ,
+image VARCHAR(9999) ,
+upload_time TIMESTAMP
+);
+
+
+------------------------------------------------------------------------------------------
+
+--NEWS ARTICLE TABLE--
+CREATE TABLE news (
+ArticleID INT(25) NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+SubmitterID INT(25) ,
+title VARCHAR(14) ,
+description VARCHAR(45) ,
+image VARCHAR(9999) ,
+article TEXT ,
+upload_time TIMESTAMP 
+)

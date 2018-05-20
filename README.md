@@ -2,6 +2,8 @@
 
 # example can be found at https://omar.earth/duffa
 
+I was a bit reluctant to do this in the end because the duffa website as it is is working fine, but it's more just to add a couple of mobile friendly things and offer a couple of features. I still think that the current duffa website is fine as it is.
+
 # ##############################################
 
  # features added on top of original website: 

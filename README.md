@@ -35,6 +35,7 @@
 * doctype not declared on my site but is declared here in the code
 * the 'content' always goes down to the footer in the code but not on the site
 * the news front page wrapper is a flex box now rather than using javascript to make the height of the related section the same as the content
+* my site has limitations for file upload sizes due to the free host that I use.
 
 
 # ##########################################################
